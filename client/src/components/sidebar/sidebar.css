@@ -1,6 +1,5 @@
 .sidebar {
   flex: 3;
-  height: fit-content;
   margin: 20px;
   padding-bottom: 30px;
   background-color: #fdfbfb;
@@ -19,22 +18,19 @@
 .sidebarTitle {
   margin: 10px;
   padding: 5px;
-  
-  height: auto;
-  border-top: solid 1px #a7a4a4;
-  border-bottom: solid 1px #a7a4a4;
-  text-align: center;
+  width: 80%;
+  border-top: 1px solid #a7a4a4;
+  border-bottom: 1px solid #a7a4a4;
   font-family: "Varela Round", sans-serif;
   font-size: 12px;
-  line-height: 19px;
-  color: #222222;
+  color: #222;
   font-weight: 600;
+  line-height: 20px;
+  text-align: center;
 }
 
 .sidebarItem > img {
   margin-top: 15px;
-  width: 250px;
-  height: 250px;
 }
 
 .sidebarItem > p {
@@ -42,7 +38,7 @@
 }
 
 .sidebarList {
-  list-style-type: none;
+  list-style: none;
   margin-bottom: 30px;
 }
 
@@ -61,7 +57,8 @@
   justify-content: center;
 }
 
-.sidebarIcon {
-  font-size: 16px;
-  margin-left: 10px;
+.sidebarIcon{
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
 }

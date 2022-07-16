@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express');
 const { request } = require('http');
 const app = express();
@@ -34,6 +35,14 @@ app.use('/api/auth' , authRoute);
 app.use('/api/users', userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
+//server frontend
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.get('*', (req,res)=> res.sendFile(path.resolve(__dirname, '../','client','build','index.html')))
+}else{
+    app.get('/', (req,res)=>res.send('Please set to production'))
+}
+
 app.listen('5000' , ()=> {
     console.log('backend is running');
 });
